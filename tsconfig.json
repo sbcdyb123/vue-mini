@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "dist", // 指定输出目录
+    "sourceMap": true, // 生成对应的 .map 文件
+    "target": "ES2016", // 指定 ECMAScript 目标版本
+    "module": "ESNext", // 指定模块代码生成
+    "moduleResolution": "node", // 指定模块解析策略
+    "strict": false, // 严格模式
+    "resolveJsonModule": true, // 解析json模块
+    "esModuleInterop": true, // 启用对 CommonJS 和 ES 模块的默认导入支持
+    "jsx": "preserve", // jsx 不转义
+    "lib": ["ESNext", "DOM"] // 支持的类库
+  }
+}
