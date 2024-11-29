@@ -9,6 +9,10 @@
     "resolveJsonModule": true, // 解析json模块
     "esModuleInterop": true, // 启用对 CommonJS 和 ES 模块的默认导入支持
     "jsx": "preserve", // jsx 不转义
-    "lib": ["ESNext", "DOM"] // 支持的类库
+    "lib": ["ESNext", "DOM"], // 支持的类库
+    "baseUrl": ".",
+    "paths": {
+      "@vue/*": ["packages/*/src"]
+    }
   }
 }

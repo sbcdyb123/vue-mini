@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import { reactive, effect } from "./reactivity.js";
+      const obj = {
+        name: "张三",
+        age: 18,
+        address: {
+          city: "北京",
+        },
+      };
+      const state = reactive(obj);
+      // const state2 = reactive(obj);
+      // console.log(state === state2);
+      effect(() => {
+        const app = document.querySelector("#app");
+        app.innerHTML = `${state.name} ${state.age} ${state.address.city}`;
+      });
+      setTimeout(() => {
+        state.age++;
+      }, 1000);
+    </script>
+  </body>
+</html>
