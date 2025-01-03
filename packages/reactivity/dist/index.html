@@ -8,17 +8,17 @@
   <body>
     <div id="app"></div>
     <script type="module">
-      import { reactive, effect } from "./reactivity.js";
-      const obj = {
-        name: "张三",
-        age: 18,
-        address: {
-          city: "北京",
-          street: "长安街",
-          zip: "100000",
-        },
-      };
-      const state = reactive(obj);
+      import { reactive, effect, ref } from "./reactivity.js";
+      // const obj = {
+      //   name: "张三",
+      //   age: 18,
+      //   address: {
+      //     city: "北京",
+      //     street: "长安街",
+      //     zip: "100000",
+      //   },
+      // };
+      // const state = reactive(obj);
       // const state2 = reactive(obj);
       // console.log(state === state2);
       // const runner = effect(
@@ -32,12 +32,13 @@
       //     },
       //   }
       // );
-      const runner = effect(() => {
+      const flag = ref(false);
+      effect(() => {
         const app = document.querySelector("#app");
-        app.innerHTML = state.address.city;
+        app.innerHTML = flag.value ? "张三" : 18;
       });
       setTimeout(() => {
-        state.address.city = "上海";
+        flag.value = true;
       }, 1000);
     </script>
   </body>

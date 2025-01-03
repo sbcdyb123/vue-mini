@@ -27,3 +27,4 @@ function createReactiveObject(target) {
     return proxy;
   }
 }
+export function toReactive(value) {}
